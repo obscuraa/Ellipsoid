@@ -8,6 +8,13 @@ EllipsoidClass ellipsoid = new EllipsoidClass
     Z = 3
 };
 
+EllipsoidClass ellipsoid2 = new EllipsoidClass
+{
+    X = 5,
+    Y = 5,
+    Z = 5
+};
+
 Area area = new Area
 {
     X = 10,
@@ -18,4 +25,6 @@ Area area = new Area
 
 bool isInside =  ellipsoid.Volume() <= area.Volume();
 //Console.WriteLine (isInside);
-var p = ellipsoid.GenerateRandomPoints(1, 2, 3, 10);
+ellipsoid.GenerateRandomPoints(1, 2, 3, 10);
+Console.WriteLine(EllipsoidClass.isInsideArea(area, ellipsoid));
+Console.WriteLine(EllipsoidClass.CheckCollision(ellipsoid, ellipsoid2));
