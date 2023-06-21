@@ -56,6 +56,22 @@ namespace Ellipsoid
             return ellipsoid.Volume() <= area.Volume();
         }
 
+
+        public double Concatenation(double vr, double radius, int lim)
+        {
+            double result = 0;
+            for (int i = 0; i < lim; i++)
+            {
+                result = Math.Pow(vr, 3);
+            }
+            return result / Math.Pow(radius, 3);
+        }
+
+        public double GetSize(double size, double excess)
+        {
+            return excess * size * 6.0 * Math.PI;
+        }
+
         public List<EllipsoidClass> GenerateRandomPoints(double a, double b, double c, int numPoints)
         {
             List<EllipsoidClass> points = new List<EllipsoidClass>();
@@ -96,14 +112,14 @@ namespace Ellipsoid
             // Get the properties of the object type
             var properties = typeof(T).GetProperties();
 
-            // Write the header row
+            // header row
             foreach (var property in properties)
             {
                 csv.Append(property.Name + ",");
             }
             csv.AppendLine();
 
-            // Write the data rows
+            // data rows
             foreach (var item in list)
             {
                 foreach (var property in properties)
@@ -114,7 +130,6 @@ namespace Ellipsoid
                 csv.AppendLine();
             }
 
-            // Write the CSV file
             File.WriteAllText(filePath, csv.ToString());
         }
     }

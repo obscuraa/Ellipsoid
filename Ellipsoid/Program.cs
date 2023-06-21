@@ -32,4 +32,4 @@ var list = ellipsoid.GenerateRandomPoints(1, 2, 3, 10);
 Console.WriteLine(EllipsoidClass.isInsideArea(area, ellipsoid));
 Console.WriteLine(EllipsoidClass.CheckCollision(ellipsoid, ellipsoid2));
 
-EllipsoidClass.WriteToCsv(list, @"C:\output.csv");
+EllipsoidClass.WriteToCsv(list, "output.csv");
