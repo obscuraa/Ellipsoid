@@ -1,4 +1,7 @@
 ﻿using Ellipsoid;
+using System.Collections.Generic;
+using System.Formats.Asn1;
+using System.Globalization;
 
 //Console.WriteLine("Hello, World!");
 EllipsoidClass ellipsoid = new EllipsoidClass
@@ -25,6 +28,8 @@ Area area = new Area
 
 bool isInside =  ellipsoid.Volume() <= area.Volume();
 //Console.WriteLine (isInside);
-ellipsoid.GenerateRandomPoints(1, 2, 3, 10);
+var list = ellipsoid.GenerateRandomPoints(1, 2, 3, 10);
 Console.WriteLine(EllipsoidClass.isInsideArea(area, ellipsoid));
 Console.WriteLine(EllipsoidClass.CheckCollision(ellipsoid, ellipsoid2));
+
+EllipsoidClass.WriteToCsv(list, @"C:\output.csv");

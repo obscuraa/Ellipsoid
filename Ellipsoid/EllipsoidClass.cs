@@ -53,7 +53,7 @@ namespace Ellipsoid
 
         public static bool isInsideArea(Area area, EllipsoidClass ellipsoid) 
         {
-            return ellipsoid.Volume() <= area.Volume(); ;
+            return ellipsoid.Volume() <= area.Volume();
         }
 
         public List<EllipsoidClass> GenerateRandomPoints(double a, double b, double c, int numPoints)
@@ -87,6 +87,35 @@ namespace Ellipsoid
             }
 
             return points;
+        }
+
+        public static void WriteToCsv<T>(List<T> list, string filePath)
+        {
+            var csv = new StringBuilder();
+
+            // Get the properties of the object type
+            var properties = typeof(T).GetProperties();
+
+            // Write the header row
+            foreach (var property in properties)
+            {
+                csv.Append(property.Name + ",");
+            }
+            csv.AppendLine();
+
+            // Write the data rows
+            foreach (var item in list)
+            {
+                foreach (var property in properties)
+                {
+                    var value = property.GetValue(item, null);
+                    csv.Append(value + ",");
+                }
+                csv.AppendLine();
+            }
+
+            // Write the CSV file
+            File.WriteAllText(filePath, csv.ToString());
         }
     }
 }
