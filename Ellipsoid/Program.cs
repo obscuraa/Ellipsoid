@@ -29,7 +29,10 @@ Area area = new Area
 bool isInside =  ellipsoid.Volume() <= area.Volume();
 //Console.WriteLine (isInside);
 var list = ellipsoid.GenerateRandomPoints(1, 2, 3, 10);
-Console.WriteLine(EllipsoidClass.isInsideArea(area, ellipsoid));
+Console.WriteLine(EllipsoidClass.IsInsideArea(area, ellipsoid));
 Console.WriteLine(EllipsoidClass.CheckCollision(ellipsoid, ellipsoid2));
 
-EllipsoidClass.WriteToCsv(list, "output.csv");
+//EllipsoidClass.WriteToCsv(list, "output.csv");
+Console.WriteLine(EllipsoidClass.CustomGamma(10));
+Console.WriteLine(MathNet.Numerics.SpecialFunctions.Gamma(10));
+Console.ReadKey();

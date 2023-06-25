@@ -1,0 +1,8 @@
+﻿@model List<MVCApp.Models.EllipsoidViewModel>
+
+<ul>
+    @foreach (var obj in @Model)
+    {
+        <li>@obj.X @obj.Y @obj.Z</li>
+    }
+</ul>
