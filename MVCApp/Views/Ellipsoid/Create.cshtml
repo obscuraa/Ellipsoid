@@ -17,6 +17,15 @@
                 <label class="form-label">Enter Z coordinate</label>
                 <input asp-for="Z" type="number" class="form-control" />
             </div>
+            <div class="mb-3">
+                <label class="form-combobox">Enter number</label>
+                <label class="form-label">Enter Z coordinate</label>
+                <input asp-for="Rglobal" type="text" class="form-control" list="exampleList" />
+                <datalist id="exampleList">
+                    <option value="Sphere"/>
+                    <option value="Cube"/>
+                </datalist>
+            </div>
             <div>
                 <button type="submit" class="btn btn-primary ">Save</button>
             </div>
