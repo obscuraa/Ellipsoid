@@ -1,6 +1,6 @@
-﻿namespace MVCApp.Models
+﻿namespace ReactMVCApp.Models
 {
-    public class EllipsoidViewModel
+    public class EllipsoidModel
     {
         public double X { get; set; }
         public double Y { get; set; }
