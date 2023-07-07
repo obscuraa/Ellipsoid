@@ -1,83 +1,41 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using ReactMVCApp.Models;
 
 namespace ReactMVCApp.Controllers
 {
+    [Route("/[controller]")]
+    [ApiController]
     public class EllipsoidController : Controller
     {
-        // GET: EllipsoidController
-        public ActionResult Index()
+        [HttpGet] // ellipsoid?pageSize=10&pageNumber=1
+        public async Task<IActionResult> GetListAsync([FromQuery] int pageSize,[FromQuery] int pageNumber)
         {
-            return View();
+            return Ok(pageSize + " " + pageNumber);
         }
 
-        // GET: EllipsoidController/Details/5
-        public ActionResult Details(int id)
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetAsync([FromRoute] Guid id)
         {
-            return View();
+            return Ok(id);
         }
 
-        // GET: EllipsoidController/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: EllipsoidController/Create
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public async Task<IActionResult> PostAsync([FromBody] EllipsoidModel ellipsoid)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            return Ok(ellipsoid);
         }
 
-        // GET: EllipsoidController/Edit/5
-        public ActionResult Edit(int id)
+        [HttpPut]
+        public async Task<IActionResult> PutAsync([FromBody] EllipsoidModel ellipsoid)
         {
-            return View();
+            return Ok(ellipsoid);
         }
 
-        // POST: EllipsoidController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        [HttpDelete]
+        public async Task<IActionResult> DeleteAsync([FromBody] Guid id)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: EllipsoidController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: EllipsoidController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            return Ok(id);
         }
     }
 }

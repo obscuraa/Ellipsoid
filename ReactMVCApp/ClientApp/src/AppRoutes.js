@@ -19,6 +19,9 @@ const AppRoutes = [
     {
         path: '/create-ellipsoid',
         element: <CreateEllipsoid />
+    },
+    {
+        path: '/ellipsoid',
     }
 ];
 

@@ -28,6 +28,7 @@ export class CreateEllipsoid extends Component {
                                 <datalist id="exampleList">
                                     <option value="Sphere" />
                                     <option value="Cube" />
+                                    <option value="testing" />
                                 </datalist>
                             </div>
                             <div>
