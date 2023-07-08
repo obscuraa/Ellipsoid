@@ -35,4 +35,7 @@ Console.WriteLine(EllipsoidClass.CheckCollision(ellipsoid, ellipsoid2));
 //EllipsoidClass.WriteToCsv(list, "output.csv");
 Console.WriteLine(EllipsoidClass.CustomGamma(10));
 Console.WriteLine(MathNet.Numerics.SpecialFunctions.Gamma(10));
+
+FileGenerator fileGenerator = new FileGenerator();
+fileGenerator.GenerateFiles(5);
 Console.ReadKey();
