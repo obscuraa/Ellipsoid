@@ -21,6 +21,7 @@ namespace MVCApp.Controllers
         public IActionResult CreateEllipsoid(EllipsoidViewModel ellipsoid)
         {
             //return View("Index");
+            ellipsoid.NC = Math.Pow(ellipsoid.R_i, 3) / Math.Pow(ellipsoid.Radius, 3);
             _ellipsoidModels.Add(ellipsoid);
             return RedirectToAction(nameof(Index));
         }

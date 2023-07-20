@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ellipsoid", "Ellipsoid\Elli
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MVCApp", "MVCApp\MVCApp.csproj", "{47792A08-EFD8-4913-A08A-E163D073949E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReactMVCApp", "ReactMVCApp\ReactMVCApp.csproj", "{EFF9D1C8-A3E3-40F0-962F-1A383D5DEF66}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReactMVCApp", "ReactMVCApp\ReactMVCApp.csproj", "{EFF9D1C8-A3E3-40F0-962F-1A383D5DEF66}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

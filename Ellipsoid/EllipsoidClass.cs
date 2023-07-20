@@ -31,13 +31,21 @@ namespace Ellipsoid
         public double Y { get; set; }
         public double Z { get; set; }
         public double Radius { get; set; }
+        public double VectorRadius { get; set; }
 
         public override double Volume()
         {
-            double a = X / 2;
-            double b = Y / 2;
-            double c = Z / 2;
-            return  (4.0 / 3.0) * Math.PI * a * b * c;
+            return  (4.0 / 3.0) * Math.PI * Math.Pow(this.Radius, 3);
+        }
+
+        public double Concentration(List<EllipsoidClass> ellipsoid)
+        {
+            double result = 0;
+            foreach(EllipsoidClass obj in ellipsoid)
+            {
+                result = Math.Pow(obj.VectorRadius, 3) / Math.Pow(obj.Radius, 3);
+            }
+            return result;
         }
 
         public override string ToString()

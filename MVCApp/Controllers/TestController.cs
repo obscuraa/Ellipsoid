@@ -5,7 +5,7 @@ namespace MVCApp.Controllers
 {
     [Route("[controller]")]
     [ApiController]
-    public class ElpController : Controller
+    public class TestController : Controller
     {
         [HttpGet] // elp?pageSize=10&pageNumber=1
         public async Task<IActionResult> GetListAsync([FromQuery] int pageSize, [FromQuery] int pageNumber)

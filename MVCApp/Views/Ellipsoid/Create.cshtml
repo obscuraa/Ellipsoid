@@ -19,10 +19,26 @@
             </div>
             <div class="mb-3">
                 <label class="form-label">Choose bounding area</label>
-                <input asp-for="boundingarea" type="text" class="form-control" list="exampleList" />
+                <input asp-for="BoundingArea" type="text" class="form-control" list="exampleList" />
                 <datalist id="exampleList">
                     <option value="Sphere"/>
                     <option value="Cube"/>
+                </datalist>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Enter R_i</label>
+                <input asp-for="R_i" type="number" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Enter Radius</label>
+                <input asp-for="Radius" type="number" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Choose distribution</label>
+                <input asp-for="Distribution_r_i" type="text" class="form-control" list="exampleList" />
+                <datalist id="exampleList">
+                    <option value="Gauss" />
+                    <option value="Gamma" />
                 </datalist>
             </div>
             <div>
